@@ -11,9 +11,7 @@
   width: 1200px;
   display: flex;
   flex-direction: row;
-  background-image: url(images/небо.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .изотерика {
   color: blueviolet;
@@ -47,4 +45,25 @@
 }
 .левинПравин {
   flex-basis: 60%;
+}
+body.day {
+  background-image: url(images/original.jpg);
+  height: 100%;
+  width: 100%;
+  background-size: 100%;
+  overflow: hidden;
+}
+body.night {
+  background-image: url(images/o5sgivhc2wgo0gkgog.jpg);
+  height: 100%;
+  width: 100%;
+  background-size: 100%;
+  overflow: hidden;
+}
+#neutral {
+  background-color: beige;
+  height: 100%;
+  width: 100%;
+  background-size: 100%;
+  overflow: hidden;
 }
