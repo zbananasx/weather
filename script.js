@@ -15,11 +15,11 @@ async function fetchWeather() {
   const time = data.location.localtime;
   weather.innerHTML = `
           <h1>погода в ${location}</h1>
-          <p>температура ${temperature}c</p> 
-          <p>ощущается как ${feelslike}c</p>
+          <p>температура ${temperature} c</p> 
+          <p>ощущается как ${feelslike} c</p>
           <p>хз че это ${humidity}</p>
           <p>контрспел в тайп соуле ${pressure}</p>
-          <p>ветер ${wind_speed}в секунду</p>
+          <p>ветер ${wind_speed} в секунду</p>
           <p>видимость ваще ${visibility}</p>
 `;
   if (time >= 6 <= 22) {
