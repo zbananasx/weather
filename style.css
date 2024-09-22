@@ -11,40 +11,59 @@
   width: 1200px;
   display: flex;
   flex-direction: row;
-  background-image: url(images/небо.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .изотерика {
   color: blueviolet;
   order: 2;
-  padding: 50px;
-  font-size: 25px;
-  border: 1px solid black;
+  padding: 50.5px;
+  font-size: 62px;
   align-self: flex-start;
+  text-align: center;
 }
 
 .верхнийБлок {
   order: 1;
-
   color: rgb(0, 8, 255);
   text-shadow: 0 0 2px #005eff;
   filter: progid:DXImageTransform.Microsoft.Glow(Color=#ff0404,Strength=6);
-  padding: 50px;
-  font-size: 25px;
+  padding: 5px;
+  font-size: 20px;
   border: 1px solid black;
   flex-basis: 40%;
 }
 
 .погода {
-  color: rgb(255, 255, 102);
+  color: rgb(0, 0, 0);
   order: 3;
-  padding: 50px;
-  font-size: 25px;
+  padding: 20px;
+  font-size: 40px;
   border: 1px solid black;
   align-self: flex-end;
   flex-basis: 40%;
+  text-align: center;
 }
 .левинПравин {
   flex-basis: 60%;
+}
+body.day {
+  background-image: url(images/original.jpg);
+  height: 100%;
+  width: 100%;
+  background-size: 100%;
+  overflow: hidden;
+}
+body.night {
+  background-image: url(images/o5sgivhc2wgo0gkgog.jpg);
+  height: 100%;
+  width: 100%;
+  background-size: 100%;
+  overflow: hidden;
+}
+#neutral {
+  background-color: beige;
+  height: 100%;
+  width: 100%;
+  background-size: 100%;
+  overflow: hidden;
 }

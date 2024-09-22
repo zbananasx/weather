@@ -1,33 +1,31 @@
-const apiUrl =
-  "http://api.weatherstack.com/current?access_key=37478c910aea95986b6316e8858e90ce&query=London";
-
+const weather = document.getElementById("weather");
 async function fetchWeather() {
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-
-    if (data.success === false) {
-      document.getElementById("weather").innerText =
-        "Error fetching weather data";
-      return;
-    }
-
-    const { temperature, weather_descriptions, wind_speed, humidity } =
-      data.current;
-    const location = data.location.name;
-
-    document.getElementById("weather").innerHTML = `
-                    <h2>Weather in ${location}</h2>
-                    <p>${weather_descriptions[0]}</p>
-                    <p>Temperature: ${temperature}°C</p>
-                    <p>Wind Speed: ${wind_speed} km/h</p>
-                    <p>Humidity: ${humidity}%</p>
-                `;
-  } catch (error) {
-    document.getElementById("weather").innerText =
-      "Failed to load weather data.";
-    console.error("Error fetching weather data: ", error);
+  let { response, data, apiUrl } = await import("./imp.js");
+  const {
+    current: {
+      temperature,
+      wind_speed,
+      pressure,
+      humidity,
+      feelslike,
+      visibility,
+    },
+  } = data;
+  const location = data.location.name;
+  const time = data.location.localtime;
+  weather.innerHTML = `
+          <h1>погода в ${location}</h1>
+          <p>температура ${temperature}c</p> 
+          <p>ощущается как ${feelslike}c</p>
+          <p>хз че это ${humidity}</p>
+          <p>контрспел в тайп соуле ${pressure}</p>
+          <p>ветер ${wind_speed}в секунду</p>
+          <p>видимость ваще ${visibility}</p>
+`;
+  if (time >= 6 <= 22) {
+    document.body.className = "day";
   }
+  document.className = "night";
+  console.log(time);
 }
-
 fetchWeather();
